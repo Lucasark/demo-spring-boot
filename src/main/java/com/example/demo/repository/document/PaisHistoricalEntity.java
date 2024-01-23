@@ -31,8 +31,4 @@ public class PaisHistoricalEntity implements Entity {
     private String idiomaOficial;
     private String moeda;
     private String continente;
-    @DBRef
-    @Builder.Default
-    private Set<EstadoEntity> estados = new HashSet<>();
-
 }

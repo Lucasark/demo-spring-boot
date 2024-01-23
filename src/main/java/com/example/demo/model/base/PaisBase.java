@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
 
-import java.util.Set;
-
 @Getter
 @Setter
 @SuperBuilder
@@ -22,6 +20,5 @@ public abstract class PaisBase implements Base {
     private String idiomaOficial;
     private String moeda;
     private String continente;
-    private Set<EstadoBase> estados;
 
 }

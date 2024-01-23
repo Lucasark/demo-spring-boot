@@ -18,5 +18,4 @@ public class EstadoRequest extends EstadoBase implements Request {
     @Serial
     private static final long serialVersionUID = 2261390442790476473L;
 
-    private String id;
 }

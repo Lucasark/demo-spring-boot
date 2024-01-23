@@ -15,4 +15,6 @@ public interface EstadoService {
     void deleteEstado(String id);
 
     Page<EstadoResponse> findEstadosByQuery(EstadoQueryRequest estadoQueryRequest, Pageable pageable);
+
+    EstadoResponse createEstado(EstadoRequest estadoRequest);
 }

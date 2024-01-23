@@ -5,11 +5,9 @@ import com.example.demo.model.request.PaisQueryRequest;
 import com.example.demo.model.response.PaisResponse;
 import com.example.demo.repository.PaisRepositoryCustom;
 import com.example.demo.repository.document.PaisEntity;
-import com.example.demo.service.PaisHistoricalService;
 import com.example.demo.service.PaisService;
 import com.example.demo.util.Converter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -49,6 +47,13 @@ public class PaisServiceImpl implements PaisService {
     @Override
     public Page<PaisResponse> searchPais(PaisQueryRequest paisQueryRequest, Pageable pageable) {
         return repository.findByCriteria(paisQueryRequest, pageable);
+    }
+
+    @Override
+    public PaisResponse savePais(PaisResponse paisResponse) {
+        var entity = converter.convert(paisResponse, PaisEntity.class);
+        repository.save(entity);
+        return paisResponse;
     }
 
 }

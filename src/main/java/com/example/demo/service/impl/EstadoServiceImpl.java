@@ -47,4 +47,11 @@ public class EstadoServiceImpl implements EstadoService {
     public Page<EstadoResponse> findEstadosByQuery(EstadoQueryRequest estadoQueryRequest, Pageable pageable) {
         return null;
     }
+
+    @Override
+    public EstadoResponse createEstado(EstadoRequest estadoRequest) {
+        var entity = converter.convert(estadoRequest, EstadoEntity.class);
+        entity = repository.save(entity);
+        return converter.convert(entity, EstadoResponse.class);
+    }
 }

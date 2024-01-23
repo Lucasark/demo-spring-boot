@@ -20,4 +20,5 @@ public interface PaisService {
 
     Page<PaisResponse> searchPais(PaisQueryRequest paisQueryRequest, Pageable pageable);
 
+    PaisResponse savePais(PaisResponse paisResponse);
 }

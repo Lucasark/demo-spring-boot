@@ -2,7 +2,7 @@ package com.example.demo.model.response;
 
 import com.example.demo.model.Response;
 import com.example.demo.model.base.EstadoBase;
-import com.example.demo.model.base.PaisBase;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +14,7 @@ import java.io.Serial;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
+@AllArgsConstructor
 public class EstadoResponse extends EstadoBase implements Response {
 
     @Serial
