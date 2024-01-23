@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
 
-public interface PaisRepositoryCustom extends MongoRepository<PaisEntity, String>, CustomizedPais {
+public interface PaisRepositoryCustom extends MongoRepository<PaisEntity, String>, CustomizedPaisRepository {
 
     Optional<PaisEntity> findByNome(String nome);
 

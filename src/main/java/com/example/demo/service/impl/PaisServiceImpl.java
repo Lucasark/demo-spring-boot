@@ -46,7 +46,7 @@ public class PaisServiceImpl implements PaisService {
 
     @Override
     public Page<PaisResponse> searchPais(PaisQueryRequest paisQueryRequest, Pageable pageable) {
-        return repository.customMethod(paisQueryRequest, pageable);
+        return repository.findByCriteria(paisQueryRequest, pageable);
     }
 
 }

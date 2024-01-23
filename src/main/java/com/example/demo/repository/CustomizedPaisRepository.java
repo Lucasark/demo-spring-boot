@@ -5,6 +5,6 @@ import com.example.demo.model.response.PaisResponse;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-public interface CustomizedPais {
-    Page<PaisResponse> customMethod(PaisQueryRequest paisQueryRequest, Pageable pageable);
+public interface CustomizedPaisRepository {
+    Page<PaisResponse> findByCriteria(PaisQueryRequest paisQueryRequest, Pageable pageable);
 }
