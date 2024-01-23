@@ -83,6 +83,7 @@ public class PaisController {
         var paisResponse = paisService.getOptionalPais(paisId);
         if (paisResponse.isPresent()) {
             var estadoResponse = estadoService.updateEstado(estadoRequest, estadoId);
+            paisResponse.get().getEstados().removeIf(e -> e.getId().equals(estadoId));
             paisResponse.get().getEstados().add(estadoResponse);
             return ResponseEntity.ok(paisService.savePais(paisResponse.get()));
         }
