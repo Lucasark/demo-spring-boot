@@ -18,4 +18,6 @@ public interface PaisHistoricalRepository extends MongoRepository<PaisHistorical
     Optional<PaisHistoricalEntity> findFirst1ByPkIdOrderByPkVersionDesc(ObjectId id);
 
     void deleteByPkId(ObjectId id);
+
+    Optional<PaisHistoricalEntity> findByPkIdAndPkVersion(ObjectId id, Long version);
 }

@@ -17,4 +17,6 @@ public interface PaisHistoricalService {
     void deletePais(String paisId);
 
     PaisPromotionDTO getPromotePais(String paisId);
+
+    PaisHistoricalResponse getPaisByVersion(String paisId, Long version);
 }

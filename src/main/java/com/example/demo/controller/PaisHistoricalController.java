@@ -34,6 +34,14 @@ public class PaisHistoricalController {
         return ResponseEntity.ok(paisHistoricalService.getPaisHistoricalById(paisId, pageable));
     }
 
+    @GetMapping("/{pais-id}/pais-historicals/versions/{version}")
+    public ResponseEntity<PaisHistoricalResponse> getPaisByVersion(
+            @PathVariable("pais-id") String paisId,
+            @PathVariable("version") Long version
+    ) {
+        return ResponseEntity.ok(paisHistoricalService.getPaisByVersion(paisId, version));
+    }
+
     @PutMapping("/{pais-id}/pais-historicals")
     public ResponseEntity<PaisHistoricalResponse> updatePais(
             @PathVariable("pais-id") String paisId,

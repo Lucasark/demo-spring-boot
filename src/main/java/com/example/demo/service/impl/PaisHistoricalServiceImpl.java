@@ -84,6 +84,14 @@ public class PaisHistoricalServiceImpl implements PaisHistoricalService {
         return converter.paisPromotionDTO(paisHistorical);
     }
 
+    @Override
+    public PaisHistoricalResponse getPaisByVersion(String paisId, Long version) {
+        var entity = repository.findByPkIdAndPkVersion(new ObjectId(paisId), version)
+                .orElseThrow(() -> new RuntimeException("Pais não encontrado!"));
+
+        return converter.toPaisHistoricalResponse(entity);
+    }
+
     private void rulePromotedPaisByName(String nomePais) {
         var pais = paisService.getOptionalPaisByName(nomePais);
 
