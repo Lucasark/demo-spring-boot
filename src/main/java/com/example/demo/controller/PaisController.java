@@ -60,7 +60,7 @@ public class PaisController {
     }
 
 
-    @PostMapping("/{pais-id}/estados")
+    @PostMapping("/{pais-id}/estado")
     public ResponseEntity<PaisResponse> createEstadoInPais(
             @RequestBody EstadoRequest estadoRequest,
             @PathVariable("pais-id") String paisId
@@ -74,7 +74,7 @@ public class PaisController {
         return ResponseEntity.notFound().build();
     }
 
-    @PutMapping("/{pais-id}/estados/{estado-id}")
+    @PutMapping("/{pais-id}/estado/{estado-id}")
     public ResponseEntity<PaisResponse> updateEstadoInPais(
             @PathVariable("pais-id") String paisId,
             @PathVariable("estado-id") String estadoId,
@@ -91,7 +91,7 @@ public class PaisController {
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @DeleteMapping("/{pais-id}/estados/{estado-id}")
+    @DeleteMapping("/{pais-id}/estado/{estado-id}")
     public ResponseEntity<PaisResponse> deleteEstadoInPais(
             @PathVariable("pais-id") String paisId,
             @PathVariable("estado-id") String estadoId
