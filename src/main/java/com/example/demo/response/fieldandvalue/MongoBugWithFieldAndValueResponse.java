@@ -1,4 +1,4 @@
-package com.example.demo.response;
+package com.example.demo.response.fieldandvalue;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,13 +14,13 @@ import java.util.Set;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MongoBugResponse {
+public class MongoBugWithFieldAndValueResponse {
 
     private String id;
 
     private String h;
 
     @Builder.Default
-    private Set<MongoBugChildResponse> estado = new HashSet<>();
+    private Set<MongoBugWithFieldAndValueChildResponse> estado = new HashSet<>();
 
 }

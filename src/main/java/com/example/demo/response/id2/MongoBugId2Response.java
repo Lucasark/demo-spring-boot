@@ -1,4 +1,4 @@
-package com.example.demo.response;
+package com.example.demo.response.id2;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,13 +14,13 @@ import java.util.Set;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MongoBugWorkaroundResponse {
+public class MongoBugId2Response {
 
     private String id;
 
     private String h;
 
     @Builder.Default
-    private Set<MongoBugWorkaroundChildResponse> estado = new HashSet<>();
+    private Set<MongoBugId2ChildResponse> estado = new HashSet<>();
 
 }

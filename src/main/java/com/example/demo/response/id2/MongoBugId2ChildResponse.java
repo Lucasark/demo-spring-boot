@@ -1,4 +1,4 @@
-package com.example.demo.response;
+package com.example.demo.response.id2;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,9 +9,9 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-public class MongoBugChildResponse {
+public class MongoBugId2ChildResponse {
 
-    private String id;
+    private String id2;
 
     private String h;
 
