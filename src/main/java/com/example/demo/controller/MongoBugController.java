@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.response.MongoBugResponse;
-import com.example.demo.model.response.MongoBugWorkaroundResponse;
+import com.example.demo.response.MongoBugResponse;
+import com.example.demo.response.MongoBugWorkaroundResponse;
 import com.example.demo.repository.PaisRepositoryCustom;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

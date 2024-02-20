@@ -1,18 +1,14 @@
 package com.example.demo.repository;
 
-import com.example.demo.model.response.MongoBugResponse;
-import com.example.demo.model.response.MongoBugWorkaroundResponse;
+import com.example.demo.response.MongoBugResponse;
+import com.example.demo.response.MongoBugWorkaroundResponse;
 import com.example.demo.repository.document.PaisEntity;
 import org.springframework.data.mongodb.repository.Aggregation;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface PaisRepositoryCustom extends MongoRepository<PaisEntity, String>, CustomizedPaisRepository {
-
-    Optional<PaisEntity> findByNome(String nome);
-
+public interface PaisRepositoryCustom extends MongoRepository<PaisEntity, String> {
 
     @Aggregation(pipeline = {
             "{$unwind: '$estados'}",
