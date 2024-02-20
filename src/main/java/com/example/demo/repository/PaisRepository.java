@@ -1,14 +1,14 @@
 package com.example.demo.repository;
 
+import com.example.demo.repository.document.PaisEntity;
 import com.example.demo.response.MongoBugResponse;
 import com.example.demo.response.MongoBugWorkaroundResponse;
-import com.example.demo.repository.document.PaisEntity;
 import org.springframework.data.mongodb.repository.Aggregation;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
-public interface PaisRepositoryCustom extends MongoRepository<PaisEntity, String> {
+public interface PaisRepository extends MongoRepository<PaisEntity, String> {
 
     @Aggregation(pipeline = {
             "{$unwind: '$estados'}",

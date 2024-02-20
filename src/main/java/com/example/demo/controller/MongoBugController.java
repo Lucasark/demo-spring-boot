@@ -2,7 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.response.MongoBugResponse;
 import com.example.demo.response.MongoBugWorkaroundResponse;
-import com.example.demo.repository.PaisRepositoryCustom;
+import com.example.demo.repository.PaisRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MongoBugController {
 
-    private final PaisRepositoryCustom repository;
+    private final PaisRepository repository;
 
     @GetMapping("/{id}")
     public ResponseEntity<List<MongoBugResponse>> getBug(
