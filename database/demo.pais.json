@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "65af449edff11f30403eb182"
+  },
+  "nome": "Brasil2",
+  "capital": "Brasília",
+  "populacao": 600000000,
+  "idiomaOficial": "Português",
+  "moeda": "Real",
+  "continente": "América do Sul",
+  "estados": [],
+  "_class": "com.example.demo.repository.document.PaisEntity"
+},
+{
+  "_id": {
+    "$oid": "65afd60e8ff1b51675b0bba9"
+  },
+  "nome": "Thomas",
+  "capital": "ThomasCity",
+  "populacao": 2000,
+  "idiomaOficial": "Português",
+  "moeda": "Real",
+  "continente": "América do Sul",
+  "estados": [
+    {
+      "$ref": "estado",
+      "$id": {
+        "$oid": "65aff175959efa168b3772c3"
+      }
+    },
+    {
+      "$ref": "estado",
+      "$id": {
+        "$oid": "65aff2449c662d40063d48d5"
+      }
+    }
+  ],
+  "_class": "com.example.demo.repository.document.PaisEntity"
+},
+{
+  "_id": {
+    "$oid": "65b105a535be5e1d81af2db5"
+  },
+  "nome": "pais",
+  "capital": "nomeCity",
+  "populacao": 6000,
+  "idiomaOficial": "Português",
+  "moeda": "Real",
+  "continente": "América do Sul",
+  "estados": [],
+  "_class": "com.example.demo.repository.document.PaisEntity"
+}]

@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "65aff175959efa168b3772c3"
+  },
+  "nome": "nome",
+  "capital": "nomeCity",
+  "populacao": 500,
+  "sigla": "sigla",
+  "regiao": "regiao",
+  "_class": "com.example.demo.repository.document.EstadoEntity"
+},
+{
+  "_id": {
+    "$oid": "65aff2449c662d40063d48d5"
+  },
+  "nome": "nome1",
+  "capital": "nomeCity",
+  "populacao": 5000,
+  "sigla": "sigla",
+  "regiao": "regiao",
+  "_class": "com.example.demo.repository.document.EstadoEntity"
+}]
