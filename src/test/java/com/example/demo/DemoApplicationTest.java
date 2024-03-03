@@ -1,7 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.document.ChildEntity;
-import com.example.demo.document.GranChildEntity;
+import com.example.demo.document.GrandChildEntity;
 import com.example.demo.document.SurveyEntity;
 import com.example.demo.repository.ChildRepository;
 import com.example.demo.repository.GrandChildRepository;
@@ -34,13 +34,13 @@ class DemoApplicationTest {
 
     @Test
     void shouldReturnSurvey_ByGrandChild() {
-        var grandChild = grandChildRepository.save(GranChildEntity.builder()
+        var grandChild = grandChildRepository.save(GrandChildEntity.builder()
                 .name("grandChild")
                 .build());
 
         var child = childRepository.save(ChildEntity.builder()
                 .name("child")
-                .granChild(grandChild)
+                .grandChild(grandChild)
                 .build());
 
         var survey = surveyRepository.save(SurveyEntity.builder()
@@ -65,13 +65,33 @@ class DemoApplicationTest {
          *
          * { "_id" : { "$oid" : "65e406c4888148611803bc2b"}, "child" : { "$java" : { "$ref" : "grandchild", "$id" : "65e406c4888148611803bc29" } } }
          */
-        var c = surveyRepository.findByChildGranChildId(grandChild.getId());
+        var c = surveyRepository.findByChildGrandChildId(grandChild.getId());
         assertThat(c).isPresent();
 
         //OR
 
-        var d = surveyRepository.findByIdAndChildGranChildId(survey.getId(), grandChild.getId());
+        var d = surveyRepository.findByIdAndChildGrandChildId(survey.getId(), grandChild.getId());
         assertThat(d).isPresent();
+    }
+
+    @Test
+    void usingAggregation() {
+        var grandChild = grandChildRepository.save(GrandChildEntity.builder()
+                .name("grandChild")
+                .build());
+
+        var child = childRepository.save(ChildEntity.builder()
+                .name("child")
+                .grandChild(grandChild)
+                .build());
+
+        var survey = surveyRepository.save(SurveyEntity.builder()
+                .child(child)
+                .name("survey")
+                .build());
+
+        var result = surveyRepository.findByAggregation(grandChild.getId());
+        assertThat(result).isPresent();
     }
 
 

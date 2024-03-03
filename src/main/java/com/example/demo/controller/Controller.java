@@ -1,7 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.document.ChildEntity;
-import com.example.demo.document.GranChildEntity;
+import com.example.demo.document.GrandChildEntity;
 import com.example.demo.document.SurveyEntity;
 import com.example.demo.repository.ChildRepository;
 import com.example.demo.repository.GrandChildRepository;
@@ -25,13 +25,13 @@ public class Controller {
     @GetMapping
     public void temp() {
 
-        var grandChild = grandChildRepository.save(GranChildEntity.builder()
+        var grandChild = grandChildRepository.save(GrandChildEntity.builder()
                 .name("grandChild")
                 .build());
 
         var child = childRepository.save(ChildEntity.builder()
                 .name("child")
-                .granChild(grandChild)
+                .grandChild(grandChild)
                 .build());
 
         var survey = surveyRepository.save(SurveyEntity.builder()
@@ -39,7 +39,7 @@ public class Controller {
                 .name("survey")
                 .build());
 
-        var result = surveyRepository.findByChildGranChildId(child.getGranChild().getId());
+        var result = surveyRepository.findByChildGrandChildId(child.getGrandChild().getId());
 
         log.info("AQUI");
     }

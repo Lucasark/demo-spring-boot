@@ -24,7 +24,7 @@ public class ChildEntity implements Entity {
     private String name;
 
     @DBRef
-    private GranChildEntity granChild;
+    private GrandChildEntity grandChild;
 
 
 }

@@ -14,8 +14,8 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("granchild")
-public class GranChildEntity implements Entity {
+@Document("grandchild")
+public class GrandChildEntity implements Entity {
 
     @MongoId(targetType = FieldType.STRING)
     private String id;
