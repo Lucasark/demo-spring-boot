@@ -33,7 +33,7 @@ class DemoApplicationTest {
     }
 
     @Test
-    void shouldReturnSurvey() {
+    void shouldReturnSurvey_ByGrandChild() {
         var grandChild = grandChildRepository.save(GranChildEntity.builder()
                 .name("grandChild")
                 .build());
@@ -48,6 +48,12 @@ class DemoApplicationTest {
                 .name("survey")
                 .build());
 
+        var a = surveyRepository.findById(survey.getId());
+        assertThat(a).isPresent();
+
+        var b = surveyRepository.findByChildId(child.getId());
+        assertThat(b).isPresent();
+
         /**
          *  This will build:
          *
@@ -59,9 +65,13 @@ class DemoApplicationTest {
          *
          * { "_id" : { "$oid" : "65e406c4888148611803bc2b"}, "child" : { "$java" : { "$ref" : "grandchild", "$id" : "65e406c4888148611803bc29" } } }
          */
-        var result = surveyRepository.findByIdAndChildGranChildId(survey.getId(), grandChild.getId());
+        var c = surveyRepository.findByChildGranChildId(grandChild.getId());
+        assertThat(c).isPresent();
 
-        assertThat(result).isPresent();
+        //OR
+
+        var d = surveyRepository.findByIdAndChildGranChildId(survey.getId(), grandChild.getId());
+        assertThat(d).isPresent();
     }
 
 

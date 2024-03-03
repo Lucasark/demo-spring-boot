@@ -39,7 +39,7 @@ public class Controller {
                 .name("survey")
                 .build());
 
-        var result = surveyRepository.findByIdAndChildGranChildId(survey.getId(), child.getGranChild().getId());
+        var result = surveyRepository.findByChildGranChildId(child.getGranChild().getId());
 
         log.info("AQUI");
     }

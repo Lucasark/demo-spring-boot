@@ -7,5 +7,7 @@ import java.util.Optional;
 
 public interface SurveyRepository extends MongoRepository<SurveyEntity, String> {
 
+    Optional<SurveyEntity> findByChildGranChildId(String grandChildId);
     Optional<SurveyEntity> findByIdAndChildGranChildId(String id, String grandChildId);
+    Optional<SurveyEntity> findByChildId(String childId);
 }
