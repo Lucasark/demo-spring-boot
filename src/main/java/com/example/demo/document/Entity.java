@@ -1,4 +1,4 @@
-package com.example.demo.repository.document;
+package com.example.demo.document;
 
 import java.io.Serializable;
 

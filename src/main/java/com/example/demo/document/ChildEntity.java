@@ -1,10 +1,11 @@
-package com.example.demo.repository.document;
+package com.example.demo.document;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -14,15 +15,16 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("estado")
-public class EstadoEntity implements Entity {
+@Document("child")
+public class ChildEntity implements Entity {
 
     @MongoId(targetType = FieldType.OBJECT_ID)
     private String id;
-    private String nome;
-    private String capital;
-    private Long populacao;
-    private String sigla;
-    private String regiao;
+
+    private String name;
+
+    @DBRef
+    private GranChildEntity granChild;
+
 
 }
